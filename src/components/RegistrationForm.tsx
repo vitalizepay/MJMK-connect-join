@@ -5,6 +5,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { tamilNaduDistricts, assemblyConstituencies } from "@/data/locationData";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const RegistrationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -55,6 +57,22 @@ const RegistrationForm = () => {
             </div>
           </div>
 
+          {/* ID Documents */}
+          <div className="grid gap-5 md:grid-cols-3">
+            <div className="space-y-1.5">
+              <Label htmlFor="aadhaar">Aadhaar Number</Label>
+              <Input id="aadhaar" placeholder="ஆதார் எண்" maxLength={12} pattern="\d{12}" title="Enter 12-digit Aadhaar number" />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="pan">PAN Number</Label>
+              <Input id="pan" placeholder="PAN எண்" maxLength={10} className="uppercase" pattern="[A-Z]{5}[0-9]{4}[A-Z]" title="Enter valid PAN (e.g. ABCDE1234F)" />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="voterId">Voter ID</Label>
+              <Input id="voterId" placeholder="வாக்காளர் அட்டை எண்" maxLength={10} pattern="[A-Z]{3}[0-9]{7}" title="Enter valid Voter ID (e.g. ABC1234567)" />
+            </div>
+          </div>
+
           {/* Contact */}
           <div className="grid gap-5 md:grid-cols-2">
             <div className="space-y-1.5">
@@ -75,12 +93,30 @@ const RegistrationForm = () => {
           {/* Location */}
           <div className="grid gap-5 md:grid-cols-2">
             <div className="space-y-1.5">
-              <Label htmlFor="district">District *</Label>
-              <Input id="district" placeholder="மாவட்டம்" required maxLength={100} />
+              <Label>District / மாவட்டம்</Label>
+              <Select>
+                <SelectTrigger><SelectValue placeholder="மாவட்டம் தேர்வு செய்க" /></SelectTrigger>
+                <SelectContent>
+                  <ScrollArea className="h-60">
+                    {tamilNaduDistricts.map((d) => (
+                      <SelectItem key={d} value={d}>{d}</SelectItem>
+                    ))}
+                  </ScrollArea>
+                </SelectContent>
+              </Select>
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="constituency">Assembly Constituency</Label>
-              <Input id="constituency" placeholder="சட்டமன்ற தொகுதி" maxLength={100} />
+              <Label>Assembly Constituency / சட்டமன்ற தொகுதி</Label>
+              <Select>
+                <SelectTrigger><SelectValue placeholder="தொகுதி தேர்வு செய்க" /></SelectTrigger>
+                <SelectContent>
+                  <ScrollArea className="h-60">
+                    {assemblyConstituencies.map((c) => (
+                      <SelectItem key={c} value={c}>{c}</SelectItem>
+                    ))}
+                  </ScrollArea>
+                </SelectContent>
+              </Select>
             </div>
           </div>
 
