@@ -65,7 +65,7 @@ const RegistrationForm = () => {
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="pan">PAN Number</Label>
-              <Input id="pan" placeholder="PAN எண்" maxLength={10} className="uppercase" pattern="[A-Z]{5}[0-9]{4}[A-Z]" title="Enter valid PAN (e.g. ABCDE1234F)" />
+              <Input id="pan" placeholder="PAN எண்" maxLength={10} className="uppercase" pattern="[A-Za-z]{5}[0-9]{4}[A-Za-z]" title="Enter valid PAN (e.g. ABCDE1234F)" onChange={(e) => { e.target.value = e.target.value.toUpperCase(); }} />
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="voterId">Voter ID</Label>
