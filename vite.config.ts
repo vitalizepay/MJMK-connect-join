@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/MJMK-connect-join/" : "/",
+  base: "/tamil-connect-join/",
   
   server: {
     host: "::",
