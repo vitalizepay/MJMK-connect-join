@@ -14,7 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      registrations: {
+        Row: {
+          aadhaar_number: string | null
+          assembly_constituency: string | null
+          created_at: string
+          date_of_birth: string
+          district: string | null
+          education: string | null
+          email: string | null
+          father_name: string
+          full_address: string | null
+          full_name: string
+          gender: string
+          id: string
+          id_proof_url: string | null
+          mobile: string
+          occupation: string | null
+          pan_card_url: string | null
+          pan_number: string | null
+          panchayat_ward: string | null
+          photo_url: string | null
+          pincode: string | null
+          volunteer_interest: string | null
+          voter_id: string | null
+          whatsapp: string | null
+        }
+        Insert: {
+          aadhaar_number?: string | null
+          assembly_constituency?: string | null
+          created_at?: string
+          date_of_birth: string
+          district?: string | null
+          education?: string | null
+          email?: string | null
+          father_name: string
+          full_address?: string | null
+          full_name: string
+          gender: string
+          id?: string
+          id_proof_url?: string | null
+          mobile: string
+          occupation?: string | null
+          pan_card_url?: string | null
+          pan_number?: string | null
+          panchayat_ward?: string | null
+          photo_url?: string | null
+          pincode?: string | null
+          volunteer_interest?: string | null
+          voter_id?: string | null
+          whatsapp?: string | null
+        }
+        Update: {
+          aadhaar_number?: string | null
+          assembly_constituency?: string | null
+          created_at?: string
+          date_of_birth?: string
+          district?: string | null
+          education?: string | null
+          email?: string | null
+          father_name?: string
+          full_address?: string | null
+          full_name?: string
+          gender?: string
+          id?: string
+          id_proof_url?: string | null
+          mobile?: string
+          occupation?: string | null
+          pan_card_url?: string | null
+          pan_number?: string | null
+          panchayat_ward?: string | null
+          photo_url?: string | null
+          pincode?: string | null
+          volunteer_interest?: string | null
+          voter_id?: string | null
+          whatsapp?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
