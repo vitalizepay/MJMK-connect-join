@@ -1,5 +1,4 @@
 name: Deploy Vite Site
-
 on:
   push:
     branches: [main]
